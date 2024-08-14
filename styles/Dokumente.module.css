@@ -1,0 +1,415 @@
+/* App.module.css */
+
+/* Login styles */
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #162447; /* Gleiche Hintergrundfarbe wie die Seite */
+  color: #e0e0e0;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #1f3b4d; /* Ein dunklerer Farbton */
+  color: #e0e0e0;
+}
+
+.inputField::placeholder {
+  color: #a0a0a0;
+}
+
+.error {
+  color: #ff4d4d;
+  margin-bottom: 15px;
+}
+
+.loginButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  background-color: #0056b3;
+}
+/* App.module.css */
+
+/* Global styles for dark and light modes */
+.lightMode {
+  background-color: #F1F0E8;
+  color: #000;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkMode {
+  background-color: #162447;
+  color: #e0e0e0;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header & Navigation */
+.header {
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  background-color: #162447; /* Hintergrundfarbe für den Header */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLeft {
+  margin-left: 20px;
+}
+
+.brandName {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.navRight {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.navList li a:hover {
+  color: #5713e9; /* Hover-Farbe für Links */
+}
+
+.modeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  margin-left: 1rem;
+}
+
+/* Burger Menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger div {
+  background-color: #fff;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navOpen {
+  transform: rotate(45deg);
+  background-color: #ADC4CE;
+}
+
+.navOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.navOpen:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Responsive Menu */
+.navListMobile {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #162447;
+  padding-top: 60px;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+}
+
+.navListMobile a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.navListMobile a:hover {
+  color: #ADC4CE;
+}
+
+.navListMobile.open {
+  transform: translateX(0);
+}
+
+.closeIcon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .navList {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+/* Main Content */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ADC4CE;
+  margin-bottom: 10px;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: #bbbbbb;
+  margin-bottom: 30px;
+}
+
+/* Document Section */
+.documentSection {
+  margin-bottom: 40px;
+}
+
+.documentSection h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ADC4CE;
+}
+
+.documentSection ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.documentSection ul li {
+  margin-bottom: 10px;
+}
+
+.documentSection ul li a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.documentSection ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background-color: #162447;
+  color: #e0e0e0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4a4a4a;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.footerLeft a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.footerLeft a:hover {
+  color: #ADC4CE;
+}
+
+.footerCenter {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+}
+
+.footerRight a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.footerRight a:hover {
+  color: #ADC4CE;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #1c1c3c;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow-y: auto;
+}
+
+.modalContent h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.modalContent p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.modalContent p strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #b0c4de;
+  font-weight: bold;
+}
+
+.modalContent a {
+  color: #6ca0dc;
+  text-decoration: none;
+}
+
+.modalContent a:hover {
+  text-decoration: underline;
+}
+
+.modalButton {
+  background-color: #3e4f7a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modalButton:hover {
+  background-color: #5a6fa3;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: #ff6b6b;
+}

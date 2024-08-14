@@ -1,0 +1,382 @@
+/* Background and Layout Settings */
+.lightMode {
+  background-color: #F1F0E8;
+  color: #000;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkMode {
+  background-color: #162447;
+  color: #fff;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header and Navigation Styles */
+.header {
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 20px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.navList li a:hover {
+  background-color: #ADC4CE;
+}
+
+.modeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Burger Menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger div {
+  background-color: #000; /* Default: Black in Light Mode */
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.darkMode .burger div {
+  background-color: #fff; /* White in Dark Mode */
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navList.showNav {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .navList {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #162447;
+    padding-top: 60px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+  }
+
+  .navList.showNav {
+    transform: translateY(0);
+    display: flex;
+    align-items: center;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+.navListMobile {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #162447;
+  padding-top: 60px;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navListMobile.open {
+  transform: translateY(0);
+}
+
+.navListMobile a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.navListMobile a:hover {
+  color: #ADC4CE;
+}
+
+/* Close Button for Mobile Navigation */
+.closeIcon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ffffff;
+  z-index: 1001; /* Ensures it stays on top of other elements */
+}
+
+.lightMode .closeIcon {
+  color: #000000; /* Black in Light Mode */
+}
+
+.closeIcon:hover {
+  color: #ADC4CE; /* Hover color */
+}
+
+/* Content Styling */
+.main {
+  padding: 20px;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #ddd;
+}
+
+/* Timeline Entries */
+.entry {
+  position: relative;
+  padding: 10px 20px;
+  width: 48%;
+  margin-bottom: 30px;
+}
+
+.entry:nth-child(odd) {
+  left: 0;
+}
+
+.entry:nth-child(even) {
+  left: 52%;
+}
+
+.entryContent {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: inherit;
+  color: inherit;
+  position: relative;
+}
+
+/* Button Styles */
+.button-wrapper {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #162447;
+  color: #e0e0e0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4a4a4a;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.footerLeft a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.footerLeft a:hover {
+  color: #ADC4CE;
+}
+
+.footerCenter {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+}
+
+.footerRight a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.footerRight a:hover {
+  color: #ADC4CE;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #1c1c3c;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow-y: auto;
+}
+
+.modalContent h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.modalContent p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.modalContent p strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #b0c4de;
+  font-weight: bold;
+}
+
+.modalContent a {
+  color: #6ca0dc;
+  text-decoration: none;
+}
+
+.modalContent a:hover {
+  text-decoration: underline;
+}
+
+.modalButton {
+  background-color: #3e4f7a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modalButton:hover {
+  background-color: #5a6fa3;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: #ff6b6b;
+}

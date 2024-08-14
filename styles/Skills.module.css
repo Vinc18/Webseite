@@ -1,0 +1,555 @@
+/* Hintergrundfarben und allgemeine Layout-Einstellungen */
+.lightMode {
+  background-color: #F1F0E8;
+  color: #000;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkMode {
+  background-color: #162447;
+  color: #fff;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header- und Navigationsstile */
+.header {
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.navList li a:hover {
+  background-color: #ADC4CE;
+}
+
+.modeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Hauptinhalt */
+.main {
+  padding: 20px;
+}
+
+/* Zeitleisten-Container */
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #ddd;
+}
+
+/* Zeitleisten-Einträge */
+.entry {
+  position: relative;
+  padding: 10px 20px; /* Felder näher an die Linie */
+  width: 48%;  /* Etwas schmaler für mehr Abstand */
+  margin-bottom: 30px; /* Abstand zwischen den Feldern */
+}
+
+.entry:nth-child(odd) {
+  left: 0;
+}
+
+.entry:nth-child(even) {
+  left: 52%; /* Positioniert die rechten Einträge näher an die Linie */
+}
+
+.entryContent {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: inherit; /* Gleiche Farbe wie der Hintergrund */
+  color: inherit;
+  position: relative;
+}
+
+/* Button-Stile */
+.button-wrapper {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer-Stile */
+.footer {
+  background-color: #162447; /* Gleiche Hintergrundfarbe wie der Content */
+  color: #e0e0e0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4a4a4a; /* Linie oberhalb des Footers */
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.footerLeft a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.footerLeft a:hover {
+  color: #ADC4CE;
+}
+
+.footerCenter {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+}
+
+.footerRight a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.footerRight a:hover {
+  color: #ADC4CE;
+}
+
+/* Modal-Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Halbtransparenter dunkler Hintergrund */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Sicherstellen, dass das Pop-up über allen anderen Inhalten liegt */
+}
+
+.modalContent {
+  background-color: #1c1c3c; /* Dunkler Hintergrund */
+  color: #e0e0e0; /* Heller Text */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px; /* Maximale Breite des Pop-ups */
+  max-height: 80%; /* Maximale Höhe des Pop-ups */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Schatten für ein Pop-up-Effekt */
+  position: relative; /* Für das Positionieren des Schließen-Buttons */
+  overflow-y: auto; /* Ermöglicht das Scrollen innerhalb des Pop-ups */
+}
+
+.modalContent h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff; /* Weiße Schriftfarbe für Überschrift */
+  margin-bottom: 15px;
+}
+
+.modalContent p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.modalContent p strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #b0c4de; /* Hellblau für Subüberschriften */
+  font-weight: bold;
+}
+
+.modalContent a {
+  color: #6ca0dc; /* Blaue Farbe für Links */
+  text-decoration: none;
+}
+
+.modalContent a:hover {
+  text-decoration: underline;
+}
+
+.modalButton {
+  background-color: #3e4f7a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modalButton:hover {
+  background-color: #5a6fa3;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: #ff6b6b;
+}
+/* Global styles for dark and light modes */
+.lightMode {
+  background-color: #F1F0E8;
+  color: #000;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkMode {
+  background-color: #162447;
+  color: #e0e0e0;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header & Navigation */
+.header {
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  background-color: #162447;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLeft {
+  margin-left: 20px;
+}
+
+.brandName {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.navRight {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.navList li a:hover {
+  color: #ADC4CE;
+}
+
+.modeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  margin-left: 1rem;
+}
+
+.skillsContainer {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.skillsTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #adc4ce;
+}
+
+.skillCategory {
+  background-color: #1b1b2f;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillsList {
+  margin-top: 10px;
+}
+
+.skillBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.skillInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skillLevel {
+  background-color: #3b3b58;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 60%;
+  height: 10px;
+  margin-left: 10px;
+}
+
+.skillLevelBar {
+  height: 100%;
+  background-color: #007bff;
+}
+
+.skillBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.progressBar {
+  width: 80%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(to right, #ff7e5f, #0a65c7); /* Farbverlauf */
+}
+.subtitle {
+  color: #000; /* Schwarz im Light-Mode */
+}
+
+.darkMode .subtitle {
+  color: #ffffff; /* Weiß im Dark-Mode */
+}
+
+.content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ADC4CE;
+}
+
+.content p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.content p, .content h2 {
+  color: inherit; /* Dynamische Textfarbe je nach Modus */
+}
+
+.darkMode .content p, .darkMode .content h2 {
+  color: #ffffff; /* Weiß im Dark-Mode */
+}
+.categoryHeader:hover {
+  background-color: #2a2a4a;
+}
+
+
+.languagesContainer {
+  background-color: #162447;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.languagesTitle {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.languageBox {
+  display: flex;
+  align-items: center;
+  background-color: #1f2a48;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.flagIcon {
+  width: 24px;
+  height: 18px;
+  margin-right: 10px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.languageName {
+  font-size: 1rem;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #162447;
+  color: #e0e0e0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.footerLeft a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.footerLeft a:hover {
+  color: #ADC4CE;
+}
+
+.footerCenter {
+  text-align: center;
+  font-size: 14px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+}
+
+.footerRight a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.footerRight a:hover {
+  color: #ADC4CE;
+}
