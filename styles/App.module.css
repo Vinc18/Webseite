@@ -223,25 +223,34 @@
   background-color: #162447; /* Background color for dark mode */
 }
 
+
+/* Adjusting the hero section for the new layout */
 .hero {
-  text-align: center;
+  display: flex;
+  justify-content: space-between; /* Space between title and image */
+  align-items: center; 
   margin-bottom: 50px;
+  text-align: left; /* Align text to the left */
+}
+
+.heroContent {
+  max-width: 50%; /* Adjust width to fit the layout */
 }
 
 .heroTitle {
-  font-size: 4rem;
+  font-size: 4.7rem; /* Decreased font size by 2-3px */
   font-weight: bold;
   margin-bottom: 10px;
-  background: linear-gradient(to right, #fe7a58, #007bff);
+  background: linear-gradient(to right, #d400ff, #4ab1ec);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .heroSubtitle {
-  font-size: 3rem;
+  font-size: 3.2rem; /* Decreased font size slightly */
   font-weight: bold;
   margin-bottom: 20px;
-  background: linear-gradient(to right, #fe7a58, #007bff);
+  background: linear-gradient(to right, #d400ff, #4ab1ec);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -251,8 +260,52 @@
   margin-bottom: 30px;
 }
 
+.heroImage {
+  border-radius: 10px; /* Adding a border-radius for rounded corners */
+  border: 5px solid #151616; /* Default border color for dark mode */
+  width: 400px; /* Increase the size of the image */
+  height: auto; /* Maintain aspect ratio */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adding a shadow for a nice effect */
+}
+
+/* Change the border color in light mode */
+.lightMode .heroImage {
+  border-color: #ffffff; /* White border in light mode */
+}
+
+/* Show logo only in light mode */
+.lightMode .logo {
+  display: block;
+}
+
+.darkMode .logo {
+  display: none;
+}
+
+/* Ensure responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .heroImage {
+    margin-top: 20px; /* Add space between text and image */
+    width: 100%; /* Ensure the image doesn't overflow */
+    max-width: 90%; /* Limit the maximum size on small screens */
+  }
+}
+
+
+
+
 .contactButton {
-  background: linear-gradient(45deg, #fe7a58, #007bff);
+  background: linear-gradient(45deg, #d400ff, #4ab1ec);
   color: white;
   border: none;
   border-radius: 5px;
@@ -262,7 +315,7 @@
 }
 
 .contactButton:hover {
-  background: linear-gradient(45deg, #ff8c70, #288bf4);
+  background: linear-gradient(45deg, #e044ff, #6ecaff);
 }
 
 .content {

@@ -11,7 +11,6 @@ const projects = [
     image: '/images/notehub.png',
     tags: ['HTML', 'CSS', 'JavaScript', 'Python'],
     code: 'https://github.com/Vinc18/NoteHub',
-    id: 0,
   },
   {
     title: 'VVETTER-APP',
@@ -19,7 +18,6 @@ const projects = [
     image: '/images/vvetter.png',
     tags: ['React Native', 'JavaScript'],
     code: 'https://github.com/Vinc18/VVETTER-APP',
-    id: 1,
   },
   {
     title: 'First WebPage',
@@ -27,7 +25,6 @@ const projects = [
     image: '/images/firstwebpage.png',
     tags: ['HTML', 'CSS'],
     code: 'http://www.imsbern.ch/ims2022/witzmann/index.html',
-    id: 2,
   },
   {
     title: 'Just Delivery',
@@ -35,8 +32,8 @@ const projects = [
     image: '/images/justdelivery.png',
     tags: ['C#'],
     code: 'https://github.com/Vinc18/JustDelivery',
-    id: 3,
   },
+  // Add two more projects if needed
 ];
 
 const Projects = () => {
@@ -102,42 +99,31 @@ const Projects = () => {
           <a href="/documents" onClick={toggleMenu}>Documents</a>
         </div>
       </header>
-      <main className={appStyles.subtitle}>
-        <h2>My Projects</h2>
-        <p>The source code of some of my projects can be found on GitHub.</p>
-        <div className={projectStyles.projectsContainer}>
-          {projects.map(({ id, image, title, description, tags, code }) => (
+      <main className={appStyles.main}>
+        <h2>Projects</h2>
+        <div className={projectStyles.projectsGrid}>
+          {projects.map(({ image, title, description, tags, code }, index) => (
             <div
               className={`${projectStyles.projectCard} ${isDarkMode ? '' : projectStyles.lightModeCard}`}
-              key={id}
+              key={index}
             >
               <div className={projectStyles.projectImageWrapper}>
-                <img
-                  src={image}
-                  alt={title}
-                  className={projectStyles.projectImage}
-                />
+                <img src={image} alt={title} className={projectStyles.projectImage} />
               </div>
               <h3>{title}</h3>
               <p>{description}</p>
-              <div>
-                <strong>Programming languages:</strong>
-                <ul className={projectStyles.tagList}>
-                  {tags.map((tag, i) => (
-                    <li className={projectStyles.tag} key={i}>{tag}</li>
-                  ))}
-                </ul>
+              <div className={projectStyles.tags}>
+                {tags.map((tag, idx) => (
+                  <span key={idx} className={projectStyles.tag}>{tag}</span>
+                ))}
               </div>
-              <div className={projectStyles.utilityList}>
-                <a className={projectStyles.externalLinks} href={code} target="_blank" rel="noopener noreferrer">
-                  Code
-                </a>
-              </div>
+              <a href={code} target="_blank" rel="noopener noreferrer" className={projectStyles.externalLink}>
+                <FaGithub size={20} /> View Code
+              </a>
             </div>
           ))}
         </div>
       </main>
-     
       <footer className={appStyles.footer}>
         <hr className={appStyles.footerLine} />
         <div className={appStyles.footerContent}>

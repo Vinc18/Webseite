@@ -11,15 +11,11 @@ import {
 import { GiBookCover } from 'react-icons/gi';
 import globalStyles from '../styles/App.module.css';
 
-
-
 const languages = [
   { name: 'Deutsch - Native Language', imgSrc: '/images/de.svg' },
   { name: 'English - B2 in 2024', imgSrc: '/images/gb.svg' },
   { name: 'French - B2 in 2024', imgSrc: '/images/fr.svg' }
 ];
-
-const programmingLanguages = ['HTML', 'CSS', 'JavaScript', 'Python'];
 
 const Skills = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -269,14 +265,14 @@ const Skills = () => {
         </div>
 
         <div className={styles.languagesContainer}>
-  <h2 className={styles.languagesTitle}>Languages</h2>
-  {languages.map((language, index) => (
-    <div key={index} className={styles.languageBox}>
-      <img src={language.imgSrc} alt={`${language.name} flag`} className={styles.flagIcon} />
-      <span className={styles.languageName}>{language.name}</span>
-    </div>
-  ))}
-</div>
+          <h2 className={styles.languagesTitle}>Languages</h2>
+          {languages.map((language, index) => (
+            <div key={index} className={styles.languageBox}>
+              <img src={language.imgSrc} alt={`${language.name} flag`} className={styles.flagIcon} />
+              <span className={styles.languageName}>{language.name}</span>
+            </div>
+          ))}
+        </div>
       </main>
       <footer className={styles.footer}>
         <hr className={styles.footerLine} />

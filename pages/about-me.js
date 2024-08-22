@@ -3,6 +3,8 @@ import styles from '../styles/App.module.css';
 import globalStyles from '../styles/App.module.css';
 import { FaSun, FaMoon, FaGithub, FaLinkedin, FaTimes, FaBars, FaEnvelope } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+
 
 const AboutMe = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -34,6 +36,13 @@ const AboutMe = () => {
   };
 
   return (
+   <> 
+    <Head>
+<title>Portfolio HomePage</title>
+
+
+    </Head>
+    
     <div className={isDarkMode ? styles.darkMode : styles.lightMode}>
       <header className={styles.header}>
         <nav className={styles.nav}>
@@ -68,35 +77,38 @@ const AboutMe = () => {
         </div>
       </header>
       <main className={styles.main}>
-        <section className={styles.hero}>
-          <h1 className={styles.heroTitle}>Hello everyone!</h1>
-          <h2 className={styles.heroSubtitle}>It's Vincent Witzmann</h2>
-          <p className={styles.heroDescription}>
-            I am a software developer, who is currently attending the Informatikschule (IMS) in Berne.
-          </p>
-          <p className={styles.heroDescription}>
-            I am glad that you visit my site, if you have any questions please contact me.
-          </p>
-          <button 
-  onClick={() => window.location.href = 'mailto:vincent.witzmann@icloud.com'} 
-  className={styles.contactButton}
->
-  Contact me
-</button>
+      <section className={styles.hero}>
+  <div className={styles.heroContent}>
+    <h1 className={styles.heroTitle}>Hello everyone!</h1>
+    <h2 className={styles.heroSubtitle}>It's Vincent Witzmann</h2>
+    <p className={styles.heroDescription}>
+      I am a software developer, who is currently attending the Informatikschule (IMS) in Berne.
+    </p>
+    <p className={styles.heroDescription}>
+      I am glad that you visit my site, if you have any questions please contact me.
+    </p>
+    <button 
+      onClick={() => window.location.href = 'mailto:vincent.witzmann@icloud.com'} 
+      className={styles.contactButton}
+    >
+      Contact me
+    </button>
+  </div>
+  <img src='/images/vinc.png' alt="Vincent Witzmann" className={styles.heroImage} /> {/* Moved the image here */}
+</section>
 
-        </section>
         <section className={styles.content}>
           <h2 className={styles.subtitle}>Who am I?</h2>
           <p>
-            Hello everyone, I am Vincent Witzmann from Bern, Switzerland. I am currently attending the IT school (IMS) at the bwd in Bern. I am also attending the Berufsschule (GIBB) specialising in application development and am taking further courses (ük) at the bbc in Bümpliz to improve my skills as a developer.
+            Hello everyone, I am Vincent Witzmann from Bern, Switzerland. I am currently attending the IMS at the Berufsbildungszentrum für Wirtschaft und Dienstleistung (bwd) in Berne. I am also attending the Berufsschule (GIBB) specialising in application development and am taking further courses (ük) at the bbc in Bümpliz to improve my skills as a developer.
           </p>
           <h2 className={styles.subtitle}>My Journey with Informatic</h2>
           <p>
-          Even as a young boy I was interested in technology, I built gaming PCs with my own hands and was fascinated by how websites work. Towards the beginning of my 9th year at school I came across this education and was immediately enthusiastic, since then I have been constantly improving my programming skills.
+            Even as a young boy I was interested in technology, I built gaming PCs with my own hands and was fascinated by how websites work. Towards the beginning of my 9th year at school I came across this education and was immediately enthusiastic, since then I have been constantly improving my programming skills.
           </p>
           <h2 className={styles.subtitle}>My Hobbies</h2>
           <p>
-          In my free time, I enjoy going to the gym and I also play tennis in a club. I love being outside with my friends. Or just playing some games online.
+            In my free time, I enjoy going to the gym and I also play tennis in a club. I love being outside with my friends. Or just playing some games online.
           </p>
         </section>
       </main>
@@ -147,6 +159,7 @@ const AboutMe = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

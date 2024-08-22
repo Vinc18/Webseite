@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Education.module.css';
 import globalStyles from '../styles/App.module.css';
-import { FaSchool, FaUniversity, FaGraduationCap, FaBuilding, FaBookOpen, FaMoon, FaBars, FaSun, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-
+import { FaSchool, FaUniversity, FaGraduationCap, FaBookOpen, FaEnvelope, FaGithub, FaLinkedin, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 
 const Education = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -31,6 +30,23 @@ const Education = () => {
   const toggleImpressum = () => {
     setIsImpressumOpen(!isImpressumOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const entries = document.querySelectorAll(`.${styles.entry}`);
+      entries.forEach(entry => {
+        const entryTop = entry.getBoundingClientRect().top;
+        if (entryTop < window.innerHeight - 50) {
+          entry.classList.add(styles.active);
+        }
+      });
+    };
+
+    handleScroll(); // Initial check on load
+    window.addEventListener('scroll', handleScroll); // Check on scroll
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className={isDarkMode ? globalStyles.darkMode : globalStyles.lightMode}>
@@ -63,63 +79,61 @@ const Education = () => {
           <a href="/documents" onClick={toggleMenu}>Documents</a>
         </div>
       </header>
+
       <main className={styles.main}>
         <h1 className={styles.title}>Education</h1>
         <div className={styles.timeline}>
           <div className={styles.entry}>
-            <span className={styles.circle}></span>
             <div className={styles.entryContent}>
               <h3>08/2022 - jetzt</h3>
               <div className={styles.title}><FaUniversity className={styles.icon} /> Informatikschule Bern (IMS)</div>
               <div className={styles.body}>
-                <p>Die Informatikmittelschule ermöglicht mir ein vollumfänglichen Abschluss im Bereich Wirtschaft. Diesen wirtschaftlichen Abschluss erreiche ich mit 3.5 Tagen in der Woche.</p>
+                <p>The IT secondary school enables me to complete a full degree in business. I achieve this business qualification by working 3.5 days a week.</p>
               </div>
               <div className={styles.buttonWrapper}>
-                <a href="https://bwdbern.ch/ims/ausbildung/dein-abschluss/" className={styles.button}>Erfahre mehr</a>
+                <a href="https://bwdbern.ch/ims/ausbildung/dein-abschluss/" className={styles.button}>Explore more</a>
               </div>
             </div>
           </div>
           <div className={styles.entry}>
-            <span className={styles.circle}></span>
             <div className={styles.entryContent}>
               <h3>08/2022 - jetzt</h3>
               <div className={styles.title}><FaGraduationCap className={styles.icon} /> GIBB Berufsfachschule Bern (GIBB)</div>
               <div className={styles.body}>
-                <p>Zusätzlich der IMS besuche ich die Gewerblich Industrielle Berufsfachschule Bern (GIBB) und absolviere die Informatik Ausbildung mit dem Ziel das EFZ als Informatiker in Applikationsentwicklung zu erlangen. Die Berufsschule besuche ich 1.5 Tage die Woche.</p>
+                <p>In addition to the IMS, I am also attending the Gewerblich Industrielle Berufsfachschule Bern (GIBB) and am completing an IT apprenticeship with the aim of obtaining the EFZ as a computer scientist in application development. I attend the vocational school 1.5 days a week.</p>
               </div>
               <div className={styles.buttonWrapper}>
-                <a href="https://gibb.ch/grundbildung/informatiker-in-efz" className={styles.button}>Erfahre mehr</a>
+                <a href="https://gibb.ch/grundbildung/informatiker-in-efz" className={styles.button}>Explore more</a>
               </div>
             </div>
           </div>
           <div className={styles.entry}>
-            <span className={styles.circle}></span>
             <div className={styles.entryContent}>
               <h3>08/2021 - 07/2022</h3>
               <div className={styles.title}><FaBookOpen className={styles.icon} /> Sekundarstufe II, Campus Muristalden</div>
               <div className={styles.body}>
-                <p>Im 9.Schuljahr konnte ich mich optimal auf die Aufnahmeprüfung für die Informatikschule vorbereiten, die ich schlussendlich auch bestand.</p>
+                <p>In the 9th school year I was able to prepare myself optimally for the entrance exam for the IT school, which I finally passed.</p>
               </div>
               <div className={styles.buttonWrapper}>
-                <a href="https://www.muristalden.ch/volksschule/9-schuljahr-plus/ziele/" className={styles.button}>Erfahre mehr</a>
+                <a href="https://www.muristalden.ch/volksschule/9-schuljahr-plus/ziele/" className={styles.button}>Explore more</a>
               </div>
             </div>
           </div>
           <div className={styles.entry}>
-            <span className={styles.circle}></span>
             <div className={styles.entryContent}>
               <h3>08/2019 - 07/2021</h3>
-              <div className={styles.title}><FaSchool className={styles.icon} /> Sekundarstufe I, Schulhaus Laubegg Bern</div>
+              <div className={styles.title}><FaSchool className={styles.icon} /> Sekundarstufe I, Schulhaus Laubegg Berne</div>
               <div className={styles.body}>
-                <p>Ich besuchte die Sekundarschule Laubegg, für 2 Jahre und wechselte anschliessend die Schule.</p>
+                <p>I attended Laubegg secondary school for two years and then changed schools.</p>
               </div>
               <div className={styles.buttonWrapper}>
-                <a href="https://www.schule-laubegg.ch/" className={styles.button}>Erfahre mehr</a>
+                <a href="https://www.schule-laubegg.ch/" className={styles.button}>Explore more</a>
               </div>
             </div>
           </div>
         </div>
       </main>
+
       <footer className={globalStyles.footer}>
         <hr className={globalStyles.footerLine} />
         <div className={globalStyles.footerContent}>
@@ -136,13 +150,25 @@ const Education = () => {
           </div>
         </div>
       </footer>
+
       {isImpressumOpen && (
         <div className={styles.modalOverlay} onClick={toggleImpressum}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={toggleImpressum}>×</button>
             <h2>Impressum</h2>
-            {/* Weitere Impressum-Inhalte hier */}
-            <button className={styles.modalButton} onClick={toggleImpressum}>Schließen</button>
+            <p>Responsible person:<br />
+              Vincent Witzmann<br />
+              Laubeggstrasse 43<br />
+              3006 Bern<br />
+              Switzerland<br />
+              Email: vincent.witzmann@icloud.com
+            </p>
+            <p>Usage of contact information:<br />
+              The use of the contact information published in the context of the imprint for the purpose of sending unsolicited advertising and information materials is hereby expressly prohibited.
+            </p>
+            <p>Disclaimer:<br />
+              The contents of our pages were created with great care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content.
+            </p>
           </div>
         </div>
       )}
