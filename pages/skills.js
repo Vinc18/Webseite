@@ -58,7 +58,7 @@ const Skills = () => {
               <li><a href="/projects">Projects</a></li>
               <li><a href="/education">Education</a></li>
               <li><a href="/skills">Skills</a></li>
-              <li><a href="/documents">Documents</a></li>
+              <li><a href="/login">Documents</a></li>
             </ul>
             <button onClick={toggleMode} className={globalStyles.modeToggle}>
               {isDarkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
@@ -74,7 +74,7 @@ const Skills = () => {
           <a href="/projects" onClick={toggleMenu}>Projects</a>
           <a href="/education" onClick={toggleMenu}>Education</a>
           <a href="/skills" onClick={toggleMenu}>Skills</a>
-          <a href="/documents" onClick={toggleMenu}>Documents</a>
+          <a href="/login" onClick={toggleMenu}>Documents</a>
         </div>
       </header>
       <main className={styles.main}>

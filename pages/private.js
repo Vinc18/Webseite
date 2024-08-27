@@ -17,11 +17,16 @@ const PrivatePage = () => {
       }
 
       try {
-        const response = await axios.post('https://api.vincentwitzmann.com/api/login', {
-          headers: { Authorization: `Bearer ${token}` },
+        const response = await axios.get('https://api.vincentwitzmann.com/api/auth', {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
         });
 
-        if (response.data.success) {
+        console.log(response);
+
+        if (response.status == 200) {
           setAuth(true);
         } else {
           router.push('/login'); // Umleiten, wenn die Authentifizierung fehlschlägt
@@ -51,9 +56,9 @@ const PrivatePage = () => {
       <h1 className="text-4xl mb-8">Private Dokumente</h1>
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-3xl">
         <h2 className="text-2xl mb-4">Dokument 1</h2>
-        <embed src="/docs/example1.pdf" width="100%" height="600px" />
+        {/* <embed src="/docs/example1.pdf" width="100%" height="600px" /> */}
         <h2 className="text-2xl mt-8 mb-4">Dokument 2</h2>
-        <embed src="/docs/example2.pdf" width="100%" height="600px" />
+        {/* <embed src="/docs/example2.pdf" width="100%" height="600px" /> */}
       </div>
     </div>
   );
