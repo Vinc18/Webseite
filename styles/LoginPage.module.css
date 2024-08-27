@@ -35,8 +35,8 @@
   border-radius: 0.5rem;
   border: none;
   font-size: 1rem;
-  color: #ffffff; /* Textfarbe Blau */
-  background-color: #ffffff; /* Helles Grau */
+  color: #2a4365; /* Textfarbe Blau */
+  background-color: #e2e8f0; /* Helles Grau */
   outline: none;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .btnBack:hover {
-  background-color: #bac4d6; /* Hellere Variante */
+  background-color: #4a5568; /* Hellere Variante */
 }
 
 /* Fehlernachricht Styling */

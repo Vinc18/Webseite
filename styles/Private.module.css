@@ -1,0 +1,277 @@
+/* Global styles for dark and light modes */
+.lightMode {
+    background-color: #F1F0E8;
+    color: #000;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .darkMode {
+    background-color: #162447;
+    color: #e0e0e0;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Header & Navigation */
+  .header {
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    background-color: inherit; /* Dynamisch, abhängig vom Modus */
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit; /* Dynamisch, abhängig vom Modus */
+  }
+  
+  .navLeft {
+    margin-left: 20px;
+  }
+  
+  .brandName {
+    font-size: 2rem;
+    color: inherit;
+    font-weight: bold;
+  }
+  
+  .navRight {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navList {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .navList li {
+    display: inline;
+  }
+  .navLink {
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .navLink:hover {
+    color: #ADC4CE; /* Lighter color on hover */
+  }
+  
+  
+  /* Navigation Link Hover Effekt */
+  .navList li a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2rem;
+    position: relative;
+  }
+  
+  .navList li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: currentColor; /* Die Farbe des Unterstrichs ist abhängig vom Text */
+    transition: width 0.3s ease;
+  }
+  
+  .navList li a:hover::after {
+    width: 100%; /* Breitet sich beim Hover auf die gesamte Breite aus */
+  }
+  
+  .lightMode .navList li a::after {
+    background-color: #000; /* Schwarzer Unterstrich im Light Mode */
+  }
+  
+  .darkMode .navList li a::after {
+    background-color: #fff; /* Weißer Unterstrich im Dark Mode */
+  }
+  
+  
+  .modeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    margin-left: 1rem;
+  }
+  
+  /* Burger Menu */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  /* Burger Menu */
+  .burger div {
+    background-color: #000; /* Standard: Schwarz im Light Mode */
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .darkMode .burger div {
+    background-color: #fff; /* Weiß im Dark Mode */
+  }
+  
+  .navList {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  .navList.showNav {
+    display: block;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navList {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #162447;
+      padding-top: 60px;
+      z-index: 1000;
+      transition: transform 0.3s ease-in-out;
+      transform: translateY(-100%);
+    }
+  
+    .navList.showNav {
+      transform: translateY(0);
+      display: flex;
+      align-items: center;
+    }
+  
+    .burger {
+      display: flex;
+    }
+  }
+  
+  .navListMobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #162447;
+    padding-top: 60px;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navListMobile.open {
+    transform: translateY(0);
+  }
+  
+  .navListMobile a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .navListMobile a:hover {
+    color: #ADC4CE;
+  }
+  
+  .closeIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  
+  /* Main Content */
+  /* Styles for the hero section */
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+  }
+  
+  .lightMode .main {
+    background-color: #F1F0E8;
+  }
+  
+  .darkMode .main {
+    background-color: #162447; /* Background color for dark mode */
+  }
+  
+  .modeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    margin-left: 1rem;
+  }
+  
+  .main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .documentContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+  }
+  
+  .documentItem {
+    width: 48%;
+  }
+  
+  .documentTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ADC4CE;
+  }
+  
+  .iframe {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .downloadLink {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #4ab1ec;
+    text-decoration: none;
+  }
+  
+  .downloadLink:hover {
+    text-decoration: underline;
+  }
+  
