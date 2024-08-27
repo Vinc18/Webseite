@@ -144,28 +144,29 @@ const Projects = () => {
         <div className={appStyles.modalOverlay} onClick={toggleImpressum}>
           <div className={appStyles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button className={appStyles.closeButton} onClick={toggleImpressum}>×</button>
-            <h2>Impressum</h2>
-            <p>Responsible person:<br />
-              Vincent Witzmann<br />
-              Laubeggstrasse 43<br />
-              3006 Bern<br />
-              Switzerland<br />
-              Email: vincent.witzmann@icloud.com
-            </p>
-            <p>Usage of contact information:<br />
-              The use of the contact information published in the context of the imprint for the purpose of sending unsolicited advertising and information materials is hereby expressly prohibited.
-            </p>
-            <p>Disclaimer:<br />
-              The author assumes no liability for the correctness, accuracy, timeliness, reliability, and completeness of the information provided.<br />
-              Liability claims against the author for damages of a material or immaterial nature resulting from the access, use, or non-use of the published information, misuse of the connection, or technical faults are excluded.<br />
-              All offers are non-binding. The author expressly reserves the right to change, supplement, delete parts of the pages or the entire offer without a separate announcement or to cease publication temporarily or permanently.
-            </p>
-            <p>Disclaimer for links and content:<br />
-              References and links to third-party websites are outside our area of responsibility. Any responsibility for such websites is rejected. Access to and use of such websites are at the user's own risk.
-            </p>
-            <p>Copyright declaration:<br />
-              The copyrights and all other rights to content, images, photos, or other files on this website belong exclusively to Vincent Witzmann or the specifically named rights holders. Written permission must be obtained in advance for the reproduction of any elements.
-            </p>
+            <h2>Legal Notice</h2>
+<p>Responsible Person:<br />
+  Vincent Witzmann<br />
+  Laubeggstrasse 43<br />
+  3006 Bern<br />
+  Switzerland<br />
+  Email: vincent.witzmann@icloud.com
+</p>
+<p>Use of Contact Information:<br />
+  The use of the contact information published in this legal notice for the purpose of sending unsolicited advertisements and informational materials is strictly prohibited.
+</p>
+<p>Disclaimer:<br />
+  The author assumes no responsibility for the correctness, accuracy, timeliness, reliability, and completeness of the information provided.<br />
+  Liability claims against the author due to material or immaterial damages resulting from access to, the use or non-use of the published information, misuse of the connection, or technical malfunctions are excluded.<br />
+  All offers are non-binding. The author expressly reserves the right to change, supplement, delete parts of the pages or the entire offer without prior notice, or to temporarily or permanently cease publication.
+</p>
+<p>Disclaimer for Content and Links:<br />
+  References and links to third-party websites are outside our area of responsibility. We reject any responsibility for such websites. Access to and use of such websites is at the user's own risk.
+</p>
+<p>Copyright Declaration:<br />
+  The copyrights and all other rights to content, images, photos, or other files on this website belong exclusively to Vincent Witzmann or the specifically named rights holders. Written consent from the copyright holder must be obtained in advance for the reproduction of any elements.
+</p>
+
             <button className={appStyles.modalButton} onClick={toggleImpressum}>Close</button>
           </div>
         </div>

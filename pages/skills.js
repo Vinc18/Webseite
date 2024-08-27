@@ -287,6 +287,7 @@ const Skills = () => {
             <a href="mailto:vincent.witzmann@icloud.com"><FaEnvelope size={24} /></a>
             <a href="https://github.com/Vinc18" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /></a>
             <a href="https://www.linkedin.com/in/vincent-witzmann-353990322/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /></a>
+          
           </div>
         </div>
       </footer>
