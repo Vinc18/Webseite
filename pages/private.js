@@ -17,7 +17,7 @@ const PrivatePage = () => {
       }
 
       try {
-        const response = await axios.get('https://api.vincentwitzmann.com/api/login', {
+        const response = await axios.post('https://api.vincentwitzmann.com/api/login', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
