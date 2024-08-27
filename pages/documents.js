@@ -11,7 +11,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://api.vincentwitzmann.com/api/login', { username, password }); // Use relative URL
+      const response = await axios.post('https://api.vincentwitzmann.com/api/login', { username, password }); // Use relative URL
       if (response.data.success) {
         localStorage.setItem('authToken', response.data.token); // Store token
         router.push('/private'); // Navigate using Next.js router
