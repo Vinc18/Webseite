@@ -1,0 +1,82 @@
+/* Container für den Login-Bereich */
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a202c; /* Dunkelblau */
+}
+
+/* Login-Box Styling */
+.loginBox {
+  background-color: #2a4365; /* Etwas helleres Blau */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Eingabefelder Styling */
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  color: #ffffff; /* Hellere Textfarbe */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  color: #ffffff; /* Textfarbe Blau */
+  background-color: #ffffff; /* Helles Grau */
+  outline: none;
+}
+
+/* Button Styling */
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnLogin {
+  background: linear-gradient(45deg, #d400ff, #4ab1ec);
+  color: #ffffff; /* Weiß */
+}
+
+.btnLogin:hover {
+  background-color: #2b6cb0; /* Hellblau */
+}
+
+.btnBack {
+  background: linear-gradient(45deg, #d400ff, #4ab1ec);
+  color: #ffffff; /* Weiß */
+}
+
+.btnBack:hover {
+  background-color: #bac4d6; /* Hellere Variante */
+}
+
+/* Fehlernachricht Styling */
+.errorMessage {
+  color: #e53e3e; /* Rot */
+  margin-top: 1rem;
+  font-weight: bold;
+}
