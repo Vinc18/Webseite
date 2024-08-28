@@ -1,4 +1,4 @@
-/* Global styles for dark and light modes */
+/* Global Styles for Dark and Light Modes */
 .lightMode {
   background-color: #F1F0E8;
   color: #000;
@@ -18,7 +18,7 @@
   padding: 1rem 0;
   text-align: center;
   position: relative;
-  background-color: #162447;
+  background-color: inherit;
 }
 
 .nav {
@@ -32,8 +32,8 @@
 }
 
 .brandName {
-  font-size: 2rem;
-  color: #fff;
+  font-size: 1.5rem; /* Kleinerer Titel */
+  color: inherit;
   font-weight: bold;
 }
 
@@ -45,19 +45,39 @@
 }
 
 .navList {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navList li {
+  position: relative;
 }
 
 .navList li a {
   text-decoration: none;
-  color: #fff;
+  color: inherit;
   font-size: 1.2rem;
+  padding: 5px 0;
+  display: block;
 }
 
-.navList li a:hover {
-  color: #ADC4CE;
+.navList li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ADC4CE; /* Farbe der Unterstreichung */
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navList li a:hover::after {
+  width: 100%;
 }
 
 .modeToggle {
@@ -68,172 +88,143 @@
   margin-left: 1rem;
 }
 
-.skillsContainer {
-  padding: 20px;
-  max-width: 600px;
+/* Main Content */
+.main {
+  padding: 40px 20px;
+  max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .skillsTitle {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #000; /* Schwarz im Light-Mode */
+  font-size: 2rem; /* Kleinerer Titel */
+  margin-bottom: 30px;
+  color: inherit;
 }
 
-.darkMode .skillsTitle {
-  color: #ffffff; /* Weiß im Dark-Mode */
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
+/* Skill Category */
 .skillCategory {
   background-color: #1b1b2f;
-  border-radius: 8px;
-  padding: 10px 20px;
-  margin-bottom: 10px;
+  border-radius: 12px;
+  padding: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .lightMode .skillCategory {
-  background-color: #e0e0e0; /* Leicht grauer Hintergrund im Light-Mode */
+  background-color: #e0e0e0; /* Light grey in light mode */
 }
 
-.categoryHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.skillCategory h2 {
+  font-size: 1.5rem;
+  color: inherit;
+  margin-bottom: 15px;
 }
 
-.skillsList {
-  margin-top: 10px;
+.skillCategory h2:hover {
+  color: #ADC4CE; /* Lighter on hover */
 }
 
-.skillBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-
-.skillInfo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.skillLevel {
-  background-color: #3b3b58;
-  border-radius: 5px;
-  overflow: hidden;
-  width: 60%;
-  height: 10px;
-  margin-left: 10px;
-}
-
-.skillLevelBar {
-  height: 100%;
-}
-
-.lightMode .skillLevelBar {
-  background-color: #ccc; /* Light gray color for light mode */
-}
-
-.darkMode .skillLevelBar {
-  background-color: #007bff; /* Original blue color for dark mode */
-}
-
-.skillBox {
+.skillList {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
+}
+
+/* Skill Box */
+.skillBox {
+  background-color: #2a2a4a;
+  border-radius: 8px;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lightMode .skillBox {
+  background-color: #cccccc; /* Light grey in light mode */
+}
+
+.skillBox:hover {
+  background-color: #383858;
+  transform: translateY(-5px);
+}
+
+.lightMode .skillBox:hover{
+
+  background-color: #b1b1b1;
+}
+
+.skillTitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: inherit;
+}
+
+.skillIcon {
+  margin-bottom: 15px;
 }
 
 .progressBar {
-  width: 80%;
+  width: 100%;
   height: 10px;
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 15px;
+}
+
+.lightMode .progressBar {
+  background-color: #cccccc; /* Slightly lighter grey in light mode */
 }
 
 .progress {
   height: 100%;
   border-radius: 5px;
-  background: linear-gradient(to right, #ff7e5f, #0a65c7); /* Farbverlauf */
+  background: linear-gradient(to right, #ff7e5f, #0a65c7); /* Gradient */
 }
 
-.subtitle {
-  color: #000; /* Schwarz im Light-Mode */
-}
-
-.darkMode .subtitle {
-  color: #ffffff; /* Weiß im Dark-Mode */
-}
-
-.content {
-  text-align: center;
-  max-width: 800px;
-}
-
-.content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #000; /* Schwarz im Light-Mode */
-}
-
-.darkMode .content h2 {
-  color: #ffffff; /* Weiß im Dark-Mode */
-}
-
-.content p {
-  font-size: 1.25rem;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.content p, .content h2 {
-  color: inherit; /* Dynamische Textfarbe je nach Modus */
-}
-
-.darkMode .content p, .darkMode .content h2 {
-  color: #ffffff; /* Weiß im Dark-Mode */
-}
-
-.categoryHeader:hover {
-  background-color: #2a2a4a;
-}
-
+/* Languages Section */
 .languagesContainer {
-  background-color: #162447;
+  margin-top: 40px;
   padding: 20px;
   border-radius: 10px;
-  max-width: 400px;
-  margin: 20px auto;
+  background-color: #1b1b2f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lightMode .languagesContainer {
+  background-color: #e0e0e0; /* Light grey in light mode */
 }
 
 .languagesTitle {
-  color: #ffffff;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.lightMode .languagesTitle {
-  color: #000; /* Schwarz im Light-Mode */
+  font-size: 2rem; /* Kleinerer Titel */
+  margin-bottom: 20px;
+  color: inherit;
 }
 
 .languageBox {
   display: flex;
   align-items: center;
-  background-color: #1f2a48;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 10px 20px;
   border-radius: 8px;
+  background-color: #2a2a4a;
   margin-bottom: 10px;
-  color: #ffffff;
-  font-size: 1rem;
+}
+
+.lightMode .languageBox {
+  background-color: #cccccc; /* Slightly darker grey in light mode */
 }
 
 .flagIcon {
@@ -246,6 +237,7 @@
 
 .languageName {
   font-size: 1rem;
+  color: inherit;
 }
 
 /* Footer */
