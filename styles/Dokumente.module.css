@@ -46,10 +46,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.downloadAllButton{
 
-  background: linear-gradient(45deg, #d400ff, #4ab1ec);
-}
 .loginButton:hover {
   background-color: #0056b3;
 }

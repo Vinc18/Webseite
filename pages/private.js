@@ -168,14 +168,69 @@ const PrivatePage = () => {
             </a>
           </div>
           <div className={styles.documentItem}>
-            <h2 className={styles.documentTitle}>KNW210 Witzmann Vincent Andreas</h2>
+            <h2 className={styles.documentTitle}>ük Kompetenznachweis 106 Vincent Witzmann</h2>
             <iframe
-              src="/docs/KNW210_Witzmann_VincentAndreas.pdf"
+              src="/docs/KNW106.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/KNW106.pdf" download className={styles.downloadLink}>
+              Download ük Kompetenznachweis 106 Vincent Witzmann
+            </a>
+          </div>
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>ük Kompetenznachweis 187 Vincent Witzmann</h2>
+            <iframe
+              src="/docs/KNW187.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/KNW187.pdf" download className={styles.downloadLink}>
+            Download ük Kompetenznachweis 187 Vincent Witzmann
+            </a>
+          </div>
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>ük Kompetenznachweis 106 Vincent Witzmann</h2>
+            <iframe
+              src="/docs/KNW210.pdf"
               className={styles.iframe}
               frameBorder="0"
             ></iframe>
             <a href="/docs/KNW210_Witzmann_VincentAndreas.pdf" download className={styles.downloadLink}>
-              Download KNW210 Witzmann Vincent Andreas
+              Download ük Kompetenznachweis 210 Vincent Witzmann
+            </a>
+          </div>
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>ük Kompetenznachweis 294 Vincent Witzmann</h2>
+            <iframe
+              src="/docs/KNW294.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/KNW294.pdf" download className={styles.downloadLink}>
+              Download ük Kompetenznachweis 294 Vincent Witzmann
+            </a>
+          </div>
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>ük Kompetenznachweis 295 Vincent Witzmann</h2>
+            <iframe
+              src="/docs/KNW295.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/KNW295.pdf" download className={styles.downloadLink}>
+              Download ük Kompetenznachweis 295 Vincent Witzmann
+            </a>
+          </div>
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>ük Kompetenznachweis 335 Vincent Witzmann</h2>
+            <iframe
+              src="/docs/KNW335.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/KNW335.pdf" download className={styles.downloadLink}>
+              Download ük Kompetenznachweis 335 Vincent Witzmann
             </a>
           </div>
         </div>
