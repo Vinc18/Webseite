@@ -59,7 +59,13 @@ const PrivatePage = () => {
       { name: "Abacus_Zertifikat_Nr_1.pdf", url: "/docs/Abacus Zertifikat Nr 1.pdf" },
       { name: "GIBB_Zeugnis.pdf", url: "/docs/GIBB Zeugnis.pdf" },
       { name: "IMS_Projekt-Abstract_Vincent_Witzmann.pdf", url: "/docs/IMS_Projekt-Abstract_Vincent_Witzmann.pdf" },
-      { name: "KNW210_Witzmann_VincentAndreas.pdf", url: "/docs/KNW210_Witzmann_VincentAndreas.pdf" },
+      { name: "ük Kompetenznachweis 106 Vincent Witzmann", url: "/docs/KNW106.pdf" }, 
+      { name: "ük Kompetenznachweis 187 Vincent Witzmann", url: "/docs/KNW187.pdf" }, 
+      { name: "ük Kompetenznachweis 210 Vincent Witzmann", url: "/docs/KNW210.pdf" },
+      { name: "ük Kompetenznachweis 294 Vincent Witzmann", url: "/docs/KNW294.pdf" }, 
+      { name: "ük Kompetenznachweis 295 Vincent Witzmann", url: "/docs/KNW295.pdf" }, 
+      { name: "ük Kompetenznachweis 335 Vincent Witzmann", url: "/docs/KNW335.pdf" }, 
+      
     ];
 
     const fetchFile = async (file) => {
