@@ -102,7 +102,7 @@ const AboutMe = () => {
           <p>
             Hello everyone, I am Vincent Witzmann from Bern, Switzerland. I am currently attending the IMS at the Berufsbildungszentrum für Wirtschaft und Dienstleistung (bwd) in Berne. I am also attending the Berufsschule (GIBB) specialising in application development and am taking further courses (ük) at the bbc in Bümpliz to improve my skills as a developer.
           </p>
-          <h2 className={styles.subtitle}>My Journey with Informatic</h2>
+          <h2 className={styles.subtitle}>My Journey with Informatics</h2>
           <p>
             Even as a young boy I was interested in technology, I built gaming PCs with my own hands and was fascinated by how websites work. Towards the beginning of my 9th year at school I came across this education and was immediately enthusiastic, since then I have been constantly improving my programming skills.
           </p>
@@ -132,28 +132,27 @@ const AboutMe = () => {
         <div className={styles.modalOverlay} onClick={toggleImpressum}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={toggleImpressum}>×</button>
-            <h2>Legal Notice</h2>
-<p>Responsible Person:<br />
+            <h2>Imprint</h2>
+<p>Contact Information:<br />
   Vincent Witzmann<br />
   Laubeggstrasse 43<br />
-  3006 Bern<br />
-  Switzerland<br />
+  3006 Bern, Switzerland<br />
   Email: vincent.witzmann@icloud.com
 </p>
-<p>Use of Contact Information:<br />
-  The use of the contact information published in this legal notice for the purpose of sending unsolicited advertisements and informational materials is strictly prohibited.
+<p>Prohibition on Unsolicited Contact:<br />
+  The contact details provided here are intended solely for legitimate inquiries. Any use of this information for unsolicited marketing or promotional purposes is strictly forbidden.
 </p>
-<p>Disclaimer:<br />
-  The author assumes no responsibility for the correctness, accuracy, timeliness, reliability, and completeness of the information provided.<br />
-  Liability claims against the author due to material or immaterial damages resulting from access to, the use or non-use of the published information, misuse of the connection, or technical malfunctions are excluded.<br />
-  All offers are non-binding. The author expressly reserves the right to change, supplement, delete parts of the pages or the entire offer without prior notice, or to temporarily or permanently cease publication.
+<p>Limitation of Liability:<br />
+  The author is not liable for the accuracy, reliability, or completeness of the content on this website. Any liability claims related to damages, whether material or immaterial, arising from the use or misuse of the information provided, including issues related to technical functionality, are excluded.<br />
+  The content is offered without obligation, and the author reserves the right to modify or delete content at any time without prior notice, as well as to temporarily or permanently shut down the website.
 </p>
-<p>Disclaimer for Content and Links:<br />
-  References and links to third-party websites are outside our area of responsibility. We reject any responsibility for such websites. Access to and use of such websites is at the user's own risk.
+<p>External Links Disclaimer:<br />
+  This website may contain links to external sites, which are not under the control of the author. The inclusion of any links does not imply endorsement, and the author is not responsible for the content or practices of linked websites. Users access such sites at their own risk.
 </p>
-<p>Copyright Declaration:<br />
-  The copyrights and all other rights to content, images, photos, or other files on this website belong exclusively to Vincent Witzmann or the specifically named rights holders. Written consent from the copyright holder must be obtained in advance for the reproduction of any elements.
+<p>Intellectual Property Rights:<br />
+  All content on this site, including text, images, and other media, is the intellectual property of Vincent Witzmann or the respective rights holders. Unauthorized use or reproduction of any material from this site without prior written permission is prohibited.
 </p>
+
 
             <button className={styles.modalButton} onClick={toggleImpressum}>Close</button>
           </div>

@@ -18,6 +18,7 @@ const languages = [
 const Skills = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeSkill, setActiveSkill] = useState(null);
+  const [isImpressumOpen, setIsImpressumOpen] = useState(false);
 
   useEffect(() => {
     const savedMode = localStorage.getItem('darkMode');
@@ -36,6 +37,10 @@ const Skills = () => {
 
   const toggleSkill = (skill) => {
     setActiveSkill(activeSkill === skill ? null : skill);
+  };
+
+  const toggleImpressum = () => {
+    setIsImpressumOpen(prevState => !prevState);
   };
 
   return (
@@ -120,6 +125,38 @@ const Skills = () => {
             </div>
           ))}
         </div>
+
+        {/* Inserted modal component */}
+        {isImpressumOpen && (
+          <div className={styles.modalOverlay} onClick={toggleImpressum}>
+            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+              <button className={styles.closeButton} onClick={toggleImpressum}>×</button>
+              <h2>Imprint</h2>
+              <p>Contact Information:<br />
+                Vincent Witzmann<br />
+                Laubeggstrasse 43<br />
+                3006 Bern, Switzerland<br />
+                Email: vincent.witzmann@icloud.com
+              </p>
+              <p>Prohibition on Unsolicited Contact:<br />
+                The contact details provided here are intended solely for legitimate inquiries. Any use of this information for unsolicited marketing or promotional purposes is strictly forbidden.
+              </p>
+              <p>Limitation of Liability:<br />
+                The author is not liable for the accuracy, reliability, or completeness of the content on this website. Any liability claims related to damages, whether material or immaterial, arising from the use or misuse of the information provided, including issues related to technical functionality, are excluded.<br />
+                The content is offered without obligation, and the author reserves the right to modify or delete content at any time without prior notice, as well as to temporarily or permanently shut down the website.
+              </p>
+              <p>External Links Disclaimer:<br />
+                This website may contain links to external sites, which are not under the control of the author. The inclusion of any links does not imply endorsement, and the author is not responsible for the content or practices of linked websites. Users access such sites at their own risk.
+              </p>
+              <p>Intellectual Property Rights:<br />
+                All content on this site, including text, images, and other media, is the intellectual property of Vincent Witzmann or the respective rights holders. Unauthorized use or reproduction of any material from this site without prior written permission is prohibited.
+              </p>
+              <button className={styles.modalButton} onClick={toggleImpressum}>Close</button>
+            </div>
+          </div>
+        )}
+        {/* End of modal component */}
+
       </main>
     </div>
   );
