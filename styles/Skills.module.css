@@ -25,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: inherit; /* Dynamisch, abhängig vom Modus */
 }
 
 .navLeft {
@@ -32,7 +33,7 @@
 }
 
 .brandName {
-  font-size: 1.5rem; /* Kleinerer Titel */
+  font-size: 2rem;
   color: inherit;
   font-weight: bold;
 }
@@ -51,34 +52,50 @@
   margin: 0;
   padding: 0;
 }
-
 .navList li {
-  position: relative;
+  display: inline;
+}
+.navLink {
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
+.navLink:hover {
+  color: #ADC4CE; /* Lighter color on hover */
+}
+
+
+/* Navigation Link Hover Effekt */
 .navList li a {
   text-decoration: none;
   color: inherit;
   font-size: 1.2rem;
-  padding: 5px 0;
-  display: block;
+  position: relative;
 }
 
 .navList li a::after {
-  content: "";
-  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
   width: 0;
   height: 2px;
-  background: #ADC4CE; /* Farbe der Unterstreichung */
-  transition: width 0.3s;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  background-color: currentColor; /* Die Farbe des Unterstrichs ist abhängig vom Text */
 }
 
 .navList li a:hover::after {
-  width: 100%;
+  width: 100%; /* Breitet sich beim Hover auf die gesamte Breite aus */
 }
+
+.lightMode .navList li a::after {
+  background-color: #000; /* Schwarzer Unterstrich im Light Mode */
+}
+
+.darkMode .navList li a::after {
+  background-color: #fff; /* Weißer Unterstrich im Dark Mode */
+}
+
 
 .modeToggle {
   background: none;

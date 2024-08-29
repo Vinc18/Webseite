@@ -82,7 +82,6 @@
   width: 0;
   height: 2px;
   background-color: currentColor; /* Die Farbe des Unterstrichs ist abhängig vom Text */
-  transition: width 0.3s ease;
 }
 
 .navList li a:hover::after {
@@ -300,9 +299,6 @@
     max-width: 90%; /* Limit the maximum size on small screens */
   }
 }
-
-
-
 
 .contactButton {
   background: linear-gradient(45deg, #d400ff, #4ab1ec);
