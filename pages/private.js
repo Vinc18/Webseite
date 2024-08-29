@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import JSZip from 'jszip';
-import { saveAs } from 'file-saver';  // Install file-saver using npm or yarn
+import { saveAs } from 'file-saver'; 
 import styles from '../styles/Private.module.css';
 
 const PrivatePage = () => {
