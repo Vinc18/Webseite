@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';  // Install file-saver using npm or yarn
 import styles from '../styles/Private.module.css';
 
 const PrivatePage = () => {
@@ -47,6 +49,31 @@ const PrivatePage = () => {
     setDarkMode(!darkMode);
   };
 
+  const handleDownloadAll = async () => {
+    const zip = new JSZip();
+    const folder = zip.folder("documents");
+
+    const files = [
+      { name: "Abacus_Debitorenbuchhaltung.pdf", url: "/docs/Abacus Debitorenbuchhaltung.pdf" },
+      { name: "Abacus_Kreditorenbuchhaltung.pdf", url: "/docs/Abacus Kreditorenbuchhaltung.pdf" },
+      { name: "Abacus_Zertifikat_Nr_1.pdf", url: "/docs/Abacus Zertifikat Nr 1.pdf" },
+      { name: "GIBB_Zeugnis.pdf", url: "/docs/GIBB Zeugnis.pdf" },
+      { name: "IMS_Projekt-Abstract_Vincent_Witzmann.pdf", url: "/docs/IMS_Projekt-Abstract_Vincent_Witzmann.pdf" },
+      { name: "KNW210_Witzmann_VincentAndreas.pdf", url: "/docs/KNW210_Witzmann_VincentAndreas.pdf" },
+    ];
+
+    const fetchFile = async (file) => {
+      const response = await fetch(file.url);
+      const blob = await response.blob();
+      folder.file(file.name, blob);
+    };
+
+    await Promise.all(files.map(fetchFile));
+
+    const content = await zip.generateAsync({ type: "blob" });
+    saveAs(content, "documents.zip");
+  };
+
   if (loading) {
     return <div>Laden...</div>;
   }
@@ -76,6 +103,10 @@ const PrivatePage = () => {
       </header>
 
       <main className={styles.main}>
+        <button className={styles.downloadAllButton} onClick={handleDownloadAll}>
+          Download All as ZIP
+        </button>
+
         <div className={styles.documentContainer}>
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>Abacus Debitorenbuchhaltung</h2>

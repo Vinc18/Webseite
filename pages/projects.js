@@ -100,7 +100,8 @@ const Projects = () => {
         </div>
       </header>
       <main className={appStyles.main}>
-        <h2>Projects</h2>
+  <h2 className={appStyles.projectTitle}>Projects</h2>
+
         <div className={projectStyles.projectsGrid}>
           {projects.map(({ image, title, description, tags, code }, index) => (
             <div

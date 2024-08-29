@@ -398,6 +398,10 @@
   position: relative; /* Für das Positionieren des Schließen-Buttons */
   overflow-y: auto; /* Ermöglicht das Scrollen innerhalb des Pop-ups */
 }
+.projectTitle {
+  font-size: 2.5rem; /* Adjust the size as needed */
+  font-weight: bold; /* Optional: make the title bolder */
+}
 
 .modalContent h2 {
   font-size: 20px;

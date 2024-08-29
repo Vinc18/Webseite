@@ -125,7 +125,7 @@ const Skills = () => {
             </div>
           ))}
         </div>
-
+<footer>
         {/* Inserted modal component */}
         {isImpressumOpen && (
           <div className={styles.modalOverlay} onClick={toggleImpressum}>
@@ -156,7 +156,7 @@ const Skills = () => {
           </div>
         )}
         {/* End of modal component */}
-
+        </footer>
       </main>
     </div>
   );

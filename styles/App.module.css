@@ -114,6 +114,10 @@
   height: 20px;
   cursor: pointer;
 }
+.projectTitle {
+  font-size: 2.5rem; /* Adjust the size as needed */
+  font-weight: bold; /* Optional: make the title bolder */
+}
 
 /* Burger Menu */
 .burger div {
