@@ -145,7 +145,7 @@ const Education = () => {
         <hr className={globalStyles.footerLine} />
         <div className={globalStyles.footerContent}>
           <div className={globalStyles.footerLeft}>
-            <a onClick={toggleImpressum} style={{ cursor: 'pointer' }}>Impressum</a>
+            <a onClick={toggleImpressum} style={{ cursor: 'pointer' }}>Imprint</a>
           </div>
           <div className={globalStyles.footerCenter}>
             <p>&copy; 2024 Vincent Witzmann</p>

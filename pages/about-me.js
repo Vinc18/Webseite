@@ -116,7 +116,7 @@ const AboutMe = () => {
         <hr className={styles.footerLine} />
         <div className={styles.footerContent}>
           <div className={styles.footerLeft}>
-            <a onClick={toggleImpressum} style={{ cursor: 'pointer' }}>Impressum</a>
+            <a onClick={toggleImpressum} style={{ cursor: 'pointer' }}>Imprint</a>
           </div>
           <div className={styles.footerCenter}>
             <p>&copy; 2024 Vincent Witzmann</p>
