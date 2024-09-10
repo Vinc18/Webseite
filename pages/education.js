@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head'; // Importieren von Head für den dynamischen Seitentitel
 import styles from '../styles/Education.module.css';
 import globalStyles from '../styles/App.module.css';
 import { FaSchool, FaUniversity, FaGraduationCap, FaBookOpen, FaEnvelope, FaGithub, FaLinkedin, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
@@ -49,6 +50,12 @@ const Education = () => {
   }, []);
 
   return (
+    <> 
+    <Head>
+<title>Portfolio EducationPage</title>
+
+
+    </Head>
     <div className={isDarkMode ? globalStyles.darkMode : globalStyles.lightMode}>
       <header className={globalStyles.header}>
         <nav className={globalStyles.nav}>
@@ -182,6 +189,7 @@ const Education = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -28,7 +28,7 @@ const PrivatePage = () => {
           },
         });
 
-        if (response.status == 200) {
+        if (response.status === 200) {
           setAuth(true);
         } else {
           router.push('/login');
@@ -54,18 +54,18 @@ const PrivatePage = () => {
     const folder = zip.folder("documents");
 
     const files = [
-      { name: "Abacus_Debitorenbuchhaltung.pdf", url: "/docs/Abacus Debitorenbuchhaltung.pdf" },
-      { name: "Abacus_Kreditorenbuchhaltung.pdf", url: "/docs/Abacus Kreditorenbuchhaltung.pdf" },
-      { name: "Abacus_Zertifikat_Nr_1.pdf", url: "/docs/Abacus Zertifikat Nr 1.pdf" },
-      { name: "GIBB_Zeugnis.pdf", url: "/docs/GIBB Zeugnis.pdf" },
-      { name: "IMS_Projekt-Abstract_Vincent_Witzmann.pdf", url: "/docs/IMS_Projekt-Abstract_Vincent_Witzmann.pdf" },
-      { name: "ük Kompetenznachweis 106 Vincent Witzmann", url: "/docs/KNW106.pdf" }, 
-      { name: "ük Kompetenznachweis 187 Vincent Witzmann", url: "/docs/KNW187.pdf" }, 
-      { name: "ük Kompetenznachweis 210 Vincent Witzmann", url: "/docs/KNW210.pdf" },
-      { name: "ük Kompetenznachweis 294 Vincent Witzmann", url: "/docs/KNW294.pdf" }, 
-      { name: "ük Kompetenznachweis 295 Vincent Witzmann", url: "/docs/KNW295.pdf" }, 
-      { name: "ük Kompetenznachweis 335 Vincent Witzmann", url: "/docs/KNW335.pdf" }, 
-      
+      { name: "BWD Zeugnis.pdf", url: "/docs/BWD Zeugnis.pdf" },
+      { name: "GIBB Zeugnis.pdf", url: "/docs/GIBB Zeugnis.pdf" },
+      { name: "Abacus Debitorenbuchhaltung.pdf", url: "/docs/Abacus Debitorenbuchhaltung.pdf" },
+      { name: "Abacus Kreditorenbuchhaltung.pdf", url: "/docs/Abacus Kreditorenbuchhaltung.pdf" },
+      { name: "Abacus Zertifikat Nr 1.pdf", url: "/docs/Abacus Zertifikat Nr 1.pdf" },
+      { name: "IMS Projekt-Abstract Vincent Witzmann.pdf", url: "/docs/IMS_Projekt-Abstract_Vincent_Witzmann.pdf" },
+      { name: "ük Kompetenznachweis 106 Vincent Witzmann.pdf", url: "/docs/KNW106.pdf" },
+      { name: "ük Kompetenznachweis 187 Vincent Witzmann.pdf", url: "/docs/KNW187.pdf" },
+      { name: "ük Kompetenznachweis 210 Vincent Witzmann.pdf", url: "/docs/KNW210.pdf" },
+      { name: "ük Kompetenznachweis 294 Vincent Witzmann.pdf", url: "/docs/KNW294.pdf" },
+      { name: "ük Kompetenznachweis 295 Vincent Witzmann.pdf", url: "/docs/KNW295.pdf" },
+      { name: "ük Kompetenznachweis 335 Vincent Witzmann.pdf", url: "/docs/KNW335.pdf" },
     ];
 
     const fetchFile = async (file) => {
@@ -115,40 +115,17 @@ const PrivatePage = () => {
 
         <div className={styles.documentContainer}>
           <div className={styles.documentItem}>
-            <h2 className={styles.documentTitle}>Abacus Debitorenbuchhaltung</h2>
+            <h2 className={styles.documentTitle}>BWD Zeugnis</h2>
             <iframe
-              src="/docs/Abacus Debitorenbuchhaltung.pdf"
+              src="/docs/BWD Zeugnis.pdf"
               className={styles.iframe}
               frameBorder="0"
             ></iframe>
-            <a href="/docs/Abacus Debitorenbuchhaltung.pdf" download className={styles.downloadLink}>
-              Download Abacus Debitorenbuchhaltung
+            <a href="/docs/BWD Zeugnis.pdf" download className={styles.downloadLink}>
+              Download BWD Zeugnis
             </a>
           </div>
-          <div className={styles.documentItem}>
-            <h2 className={styles.documentTitle}>Abacus Kreditorenbuchhaltung</h2>
-            <iframe
-              src="/docs/Abacus Kreditorenbuchhaltung.pdf"
-              className={styles.iframe}
-              frameBorder="0"
-            ></iframe>
-            <a href="/docs/Abacus Kreditorenbuchhaltung.pdf" download className={styles.downloadLink}>
-              Download Abacus Kreditorenbuchhaltung
-            </a>
-          </div>
-        </div>
-        <div className={styles.documentContainer}>
-          <div className={styles.documentItem}>
-            <h2 className={styles.documentTitle}>Abacus Zertifikat Nr 1</h2>
-            <iframe
-              src="/docs/Abacus Zertifikat Nr 1.pdf"
-              className={styles.iframe}
-              frameBorder="0"
-            ></iframe>
-            <a href="/docs/Abacus Zertifikat Nr 1.pdf" download className={styles.downloadLink}>
-              Download Abacus Zertifikat Nr 1
-            </a>
-          </div>
+
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>GIBB Zeugnis</h2>
             <iframe
@@ -160,8 +137,43 @@ const PrivatePage = () => {
               Download GIBB Zeugnis
             </a>
           </div>
-        </div>
-        <div className={styles.documentContainer}>
+
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>Abacus Debitorenbuchhaltung</h2>
+            <iframe
+              src="/docs/Abacus Debitorenbuchhaltung.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/Abacus Debitorenbuchhaltung.pdf" download className={styles.downloadLink}>
+              Download Abacus Debitorenbuchhaltung
+            </a>
+          </div>
+
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>Abacus Kreditorenbuchhaltung</h2>
+            <iframe
+              src="/docs/Abacus Kreditorenbuchhaltung.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/Abacus Kreditorenbuchhaltung.pdf" download className={styles.downloadLink}>
+              Download Abacus Kreditorenbuchhaltung
+            </a>
+          </div>
+
+          <div className={styles.documentItem}>
+            <h2 className={styles.documentTitle}>Abacus Zertifikat Nr 1</h2>
+            <iframe
+              src="/docs/Abacus Zertifikat Nr 1.pdf"
+              className={styles.iframe}
+              frameBorder="0"
+            ></iframe>
+            <a href="/docs/Abacus Zertifikat Nr 1.pdf" download className={styles.downloadLink}>
+              Download Abacus Zertifikat Nr 1
+            </a>
+          </div>
+
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>IMS Projekt-Abstract Vincent Witzmann</h2>
             <iframe
@@ -173,6 +185,7 @@ const PrivatePage = () => {
               Download IMS Projekt-Abstract Vincent Witzmann
             </a>
           </div>
+
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>ük Kompetenznachweis 106 Vincent Witzmann</h2>
             <iframe
@@ -184,6 +197,7 @@ const PrivatePage = () => {
               Download ük Kompetenznachweis 106 Vincent Witzmann
             </a>
           </div>
+
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>ük Kompetenznachweis 187 Vincent Witzmann</h2>
             <iframe
@@ -192,20 +206,22 @@ const PrivatePage = () => {
               frameBorder="0"
             ></iframe>
             <a href="/docs/KNW187.pdf" download className={styles.downloadLink}>
-            Download ük Kompetenznachweis 187 Vincent Witzmann
+              Download ük Kompetenznachweis 187 Vincent Witzmann
             </a>
           </div>
+
           <div className={styles.documentItem}>
-            <h2 className={styles.documentTitle}>ük Kompetenznachweis 106 Vincent Witzmann</h2>
+            <h2 className={styles.documentTitle}>ük Kompetenznachweis 210 Vincent Witzmann</h2>
             <iframe
               src="/docs/KNW210.pdf"
               className={styles.iframe}
               frameBorder="0"
             ></iframe>
-            <a href="/docs/KNW210_Witzmann_VincentAndreas.pdf" download className={styles.downloadLink}>
+            <a href="/docs/KNW210.pdf" download className={styles.downloadLink}>
               Download ük Kompetenznachweis 210 Vincent Witzmann
             </a>
           </div>
+
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>ük Kompetenznachweis 294 Vincent Witzmann</h2>
             <iframe
@@ -217,6 +233,7 @@ const PrivatePage = () => {
               Download ük Kompetenznachweis 294 Vincent Witzmann
             </a>
           </div>
+
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>ük Kompetenznachweis 295 Vincent Witzmann</h2>
             <iframe
@@ -228,6 +245,7 @@ const PrivatePage = () => {
               Download ük Kompetenznachweis 295 Vincent Witzmann
             </a>
           </div>
+
           <div className={styles.documentItem}>
             <h2 className={styles.documentTitle}>ük Kompetenznachweis 335 Vincent Witzmann</h2>
             <iframe

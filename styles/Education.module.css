@@ -188,6 +188,29 @@
   font-size: 1.5rem;
 }
 
+.buttonWrapper {
+  text-align: center;
+}
+
+.buttonWrapper .button {
+  background: linear-gradient(45deg, #d400ff, #4ab1ec); /* Gradient similar to the explore button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.buttonWrapper .button:hover {
+  background: linear-gradient(45deg, #e044ff, #6ecaff); /* Lighter gradient on hover */
+}
+
+
+
+
 .navListMobile a:hover {
   color: #ADC4CE;
 }

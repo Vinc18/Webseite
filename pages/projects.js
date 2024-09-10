@@ -3,6 +3,7 @@ import appStyles from '../styles/App.module.css';
 import projectStyles from '../styles/Project.module.css';
 import { FaGithub, FaLinkedin, FaTimes, FaSun, FaMoon, FaEnvelope } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const projects = [
   {
@@ -66,6 +67,12 @@ const Projects = () => {
   };
 
   return (
+    <> 
+    <Head>
+<title>Portfolio ProjectsPage</title>
+
+
+    </Head>
     <div className={isDarkMode ? appStyles.darkMode : appStyles.lightMode}>
       <header className={appStyles.header}>
         <nav className={appStyles.nav}>
@@ -129,7 +136,7 @@ const Projects = () => {
         <hr className={appStyles.footerLine} />
         <div className={appStyles.footerContent}>
           <div className={appStyles.footerLeft}>
-            <a onClick={toggleImpressum} style={{ cursor: 'pointer' }}>Impressum</a>
+            <a onClick={toggleImpressum} style={{ cursor: 'pointer' }}>Imprint</a>
           </div>
           <div className={appStyles.footerCenter}>
             <p>&copy; 2024 Vincent Witzmann</p>
@@ -172,6 +179,7 @@ const Projects = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
